@@ -1,0 +1,14 @@
+//10) 01:00:05 - What is the difference between == and ===?
+
+console.log(5=='5'); // true, because == performs type coercion and considers them equal
+console.log(5==="5"); // false, because === checks for both value and type, and they are not the same type (number vs string)
+
+// 11) 01:03:32 - What is the difference between null and undefined in JavaScript?
+
+let a = null; // a is explicitly set to null, indicating the absence of any value
+console.log(a); // Output: null
+console.log(typeof a); // Output: object (this is a quirk in JavaScript)
+
+let b; // b is declared but not initialized, so it is undefined
+console.log(b); // Output: undefined
+console.log(typeof b); // Output: undefined

@@ -1,0 +1,28 @@
+// 7)	38:09 - What are promises in JavaScript? Explain the difference between callback functions and promises with an example.
+//Ans
+
+function fetchData(callback) { // Simulate an asynchronous operation, such as fetching data from a server
+    //Fetch data from server resolve, pending, rejected
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log("Data fetched successfully!"); // Simulate data fetching
+            const data = "Data fetched from server";// Simulated data
+            resolve(data) // Resolve the promise with the fetched data
+        }, 2000);
+    });
+}
+
+// Use the fetchData function with a promise
+fetchData().then(function(data) {
+    console.log("Handling data with promises:", data); // Process the fetched data
+})
+async function run() {
+const data = await fetchData()
+console.log("Handling data with async await:", data);
+}
+run();
+// Output:  
+// (after 2 seconds) Data fetched successfully!
+// (after 2 seconds) Handling data with promises: Data fetched from server
+// (after 2 seconds) Data fetched successfully!
+// (after 2 seconds) Handling data with async await: Data fetched from server

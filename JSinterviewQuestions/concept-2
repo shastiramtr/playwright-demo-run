@@ -1,0 +1,43 @@
+//3) 03:28 - What are anonymous functions in JavaScript? Define their syntax and implementation.
+
+// VAR example
+function varExample() {// Function to demonstrate var scoping
+    var x = 10;// Variable declared with var is function-scoped
+    if (true) {//   
+        var x = 20; // same variable, function-scoped
+        console.log("var inside block:", x); // 20
+    }
+    console.log("var outside block:", x); // 20
+}
+
+// LET example
+function letExample() {
+    let x = 10;
+    if (true) {
+        let x = 20; // new variable, block-scoped
+        y = 30;     // global variable (no let/var/const)
+        console.log("let inside block:", x); // 20
+    }
+    console.log("global y:", y); // 30
+    console.log("let outside block:", x); // 10
+}
+
+// CONST example
+function constExample() {
+    const x = 10;
+    if (true) {
+        const x = 20; // new variable, block-scoped
+        console.log("const inside block:", x); // 20
+    }
+    try {
+        x = 30; // ❌ Error: Assignment to constant variable
+    } catch (err) {
+        console.log("Error when reassigning const:", err.message);
+    }
+    console.log("const outside block:", x); // 10
+}
+
+// Run them
+varExample();
+letExample();
+constExample();

@@ -1,0 +1,27 @@
+const { chromium } = require('playwright');
+(async () => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto('https://rahulshettyacademy.com/client/#/auth/login');
+  await page.fill('#userEmail', 'shastiram@gmail.com');
+  await page.fill('#userPassword', 'Login@123');
+  await page.click("[value='Login']");
+  await page.waitForLoadState('networkidle');
+  await page.click(".card-body:has-text('ZARA COAT 3') >> text=Add To Cart");
+  await page.click("[routerlink*='cart']");
+  await page.waitForSelector('text=Checkout', {timeout:20000});
+  await page.click('text=Checkout');
+  await page.fill("[placeholder*='Country']", 'ind', {delay:100});
+  await page.waitForTimeout(2000);
+  const countryHtml = await page.locator("[placeholder*='Country']").evaluate(el => el.outerHTML);
+  const taResultsCount = await page.locator('.ta-results').count();
+  const indiaButtonsCount = await page.locator('button:has-text("India")').count();
+  const indButtonsCount = await page.locator('button:has-text("ind")').count();
+  const innerText = await page.locator('body').innerText();
+  console.log('countryHtml=', countryHtml);
+  console.log('.ta-results count=', taResultsCount);
+  console.log('India buttons count=', indiaButtonsCount);
+  console.log('ind buttons count=', indButtonsCount);
+  console.log('body snippet=', innerText.slice(0, 1000));
+  await browser.close();
+})();

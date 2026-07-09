@@ -1,0 +1,23 @@
+[
+{
+    "email" :"anu.sasi@warnerhotels.co.uk",
+    "password" : "Login@123456",
+    "productName" : "Royale",
+    "priceType" : "Flexible",    
+    "cardnumber" : "4012000033330026",
+    "expirydate" : "0434",
+    "cvv" : "123",
+    "postalcode" : "HP2 4YL"
+},
+{
+    "email" :"anu.sasi@warnerhotels.co.uk",
+    "password" : "Login@123456",
+    "productName" : "Signature",
+    "priceType" : "Standard",    
+    "cardnumber" : "4012000033330026",
+    "expirydate" : "0434",
+    "cvv" : "123",
+    "postalcode" : "HP2 4YL"
+}
+]   
+   

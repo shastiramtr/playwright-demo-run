@@ -1,0 +1,44 @@
+// Array example and operations
+//4)	16:26 - Where are the push, pop, slice, shift, and unshift methods used when accessing array elements?
+// define an array
+const fruits =["Apple", "Banana", "Cherry", "Date"];
+
+// Accessing elements by index
+console.log(fruits[0]); // Output: Apple
+console.log(fruits[2]); // Output: Cherry
+
+// Add an element to the end of the array
+fruits.push("Elderberry");
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Date", "Elderberry"]
+
+// Remove the last element from the array
+const lastFruit = fruits.pop(); // Removes "Elderberry" and returns it
+console.log(lastFruit); // Output: Elderberry
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Date"]
+
+// add an element to the beginning of the array
+fruits.unshift("Fig");
+console.log(fruits); // Output: ["Fig", "Apple", "Banana", "Cherry", "Date"]
+
+// Remove the first element from the array
+const firstFruit = fruits.shift(); // Removes "Fig" and returns it
+console.log(firstFruit); // Output: Fig
+console.log(fruits); // Output: ["Apple", "Banana", "Cherry", "Date"]
+
+// Find the index of an element
+const index = fruits.indexOf("Cherry");
+console.log(index); // Output: 2
+
+//Remove an element by index using splice
+const removedFruits = fruits.splice(1, 1); // Removes 1 element at index 1 (Banana)
+console.log(removedFruits); // Output: ["Banana"]
+console.log(fruits); // Output: ["Apple", "Cherry", "Date"] 
+
+//Iterate over the array using forEach
+fruits.forEach((fruit, index) => {
+    console.log(`${index}: ${fruit}`);
+});
+// Output:
+// 0: Apple
+// 1: Cherry
+// 2: Date

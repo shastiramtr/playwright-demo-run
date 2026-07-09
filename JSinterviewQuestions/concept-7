@@ -1,0 +1,28 @@
+
+//12 01:06:36 - A classic programming interview question that involves using array methods (filter, map, reduce), and JavaScript objects.
+
+// Create an array of object representing students with their names and scores, and get the below result with optimized solution.
+// 1.	Filter out students who passed in the exam with score more than 36.
+// 2.	Update Passed students names to uppercase.
+// 3.	Total score of all passing students
+
+const student =[
+    {name:"shasti", score:35},
+    {name:"john", score:40},
+    {name:"jane", score:38},
+    {name:"doe", score:30},
+    {name:"smith", score:45}
+];
+const passedStudents = student.filter(s => s.score > 36); // Step 1: Filter out students who passed
+console.log("Passed Students:", passedStudents);
+
+const uppercasestudentnames = passedStudents.map(s => s.name.toUpperCase()); // Step 2: Update passed students names to uppercase
+console.log("Updated Student Names:", uppercasestudentnames);
+
+const totalScore = passedStudents.reduce((sum, s) => sum + s.score, 0); // Step 3: Total score of all passing students
+console.log("Total Score of Passing Students:", totalScore);
+
+//output
+// Passed Students: [ { name: 'john', score: 40 }, { name: 'jane', score: 38 }, { name: 'smith', score: 45 } ]
+// Updated Student Names: [ 'JOHN', 'JANE', 'SMITH' ]
+// Total Score of Passing Students: 123
