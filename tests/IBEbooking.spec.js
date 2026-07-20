@@ -20,7 +20,7 @@ test (`IBEbooking with ${data.productName} and ${data.priceType} price`,async({p
      await selectProductWithPrice(page, data.productName, data.priceType);
 
      // Handle bed configuration dropdown if it appears
-     const bedDropdown = page.locator("form select[title='Please choose a bed configuration:']");// locate the bed configuration dropdown using its title attribute
+     const bedDropdown = page.getByRole('combobox', { name: 'Please choose a bed configuration:' });
 
      // Wait up to 10 seconds for the dropdown to be attached to the DOM
      await bedDropdown.waitFor({ state: 'attached', timeout: 10000 }).catch(() => null);// if the dropdown is not found within 10 seconds, catch the timeout error and return null to avoid test failure

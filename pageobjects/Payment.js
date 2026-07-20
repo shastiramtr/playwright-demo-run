@@ -1,8 +1,7 @@
 class Payment {
     constructor(page){
         this.page = page;
-        this.outerFrameElement = page.locator(
-  'iframe[title="Missing translation \\"reservations.payment-info.cc.iframe\\" for locale \\"en\\""]');
+        this.outerFrameElement = page.frameLocator('#cc-frame');
       }
     async fillcarddetails(cardnumber, expirydate, cvv, postalcode){
         
