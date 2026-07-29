@@ -28,3 +28,6 @@ test('Select third auto-suggestion item from Google Search using default locator
     // 7. Verify the search results page URL loaded successfully
     await expect(page).toHaveURL(/search/);
 });
+
+
+
