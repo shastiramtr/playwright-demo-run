@@ -1,7 +1,7 @@
 const { test } = require('@playwright/test');
 
 //Playwright Interview Question
-//Explain Browser, BrowserContext, and Page with a Real-Time Example
+//Explain Browser, BrowserContext, and Page with a Real-Time Example 
 //This is one of the most common Playwright interview questions.
 
 test('Browser Context Example', async ({ browser }) => {
